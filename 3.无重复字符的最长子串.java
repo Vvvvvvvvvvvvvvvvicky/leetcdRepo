@@ -8,16 +8,16 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         char[] strChars = s.toCharArray();
-        StringBuilder subSeq = new StringBuilder(); //ÁÙÊ±×Ö·û´®±äÁ¿
-        String resultStr = new String(); //½á¹û×Ö·û´®
+        StringBuilder subSeq = new StringBuilder(); //ä¸´æ—¶å­—ç¬¦ä¸²å˜é‡
+        String resultStr = new String(); //ç»“æœå­—ç¬¦ä¸²
        
         for(int i=0;i<strChars.length;i++){
             subSeq = new StringBuilder(String.valueOf(strChars[i]));
             for(int j=i+1;j<strChars.length;j++){
-                //²éÑ¯ÖØ¸´×Ö·û´®
+                //æŸ¥è¯¢é‡å¤å­—ç¬¦ä¸²
                 if(subSeq.toString().indexOf( strChars[j] ) < 0){
                     subSeq.append(strChars[j]);
-                    //µ±µ½´ï×îºóÒ»¸ö×Ö·ûÊ±£¬ÇÒµ±Ç°×Ö·û´®´óÓÚÉÏÒ»¸ö×Ö·û´®ĞòÁĞ
+                    //å½“åˆ°è¾¾æœ€åä¸€ä¸ªå­—ç¬¦æ—¶ï¼Œä¸”å½“å‰å­—ç¬¦ä¸²å¤§äºä¸Šä¸€ä¸ªå­—ç¬¦ä¸²åºåˆ—
                     if(subSeq.length()>resultStr.length()&&j==strChars.length-1){
                         resultStr = subSeq.toString(); 
                     }
@@ -29,7 +29,7 @@ class Solution {
                 }
             }
         }
-        //´¦Àí³¤¶ÈÎª0¡¢Îª1µÄ×Ö·û´®
+        //å¤„ç†é•¿åº¦ä¸º0ã€ä¸º1çš„å­—ç¬¦ä¸²
         if ((resultStr.length()==0)){
             resultStr = subSeq.toString();
         }
