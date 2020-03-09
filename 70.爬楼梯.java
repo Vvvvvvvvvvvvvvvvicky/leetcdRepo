@@ -30,6 +30,7 @@ class Solution {
     // 2 1 1 1
     // 2 1 2
     // 2 2 1
+    
     public int climbStairs(int n) {
         //用一个变量记录已经计算过的值，不会超时?
         if(n <= 2) 
